@@ -9,16 +9,20 @@
 .nav {
 	position: fixed;
 	top: 0;
-	padding: 1rem;
-	border-bottom: 1px solid black;
+	padding: 2rem;
 	width: 100%;
 	background-color: white;
+	text-align: center;
+	background-color: #ffa584;
+	background: rgb(255,165,132);
+background: linear-gradient(70deg, rgba(255,165,132,1) 0%, rgba(197,186,250,1) 100%);
+	z-index: 3;
 }
 
 .intro {
 	margin-top: 55px;
-	width: 80%;
 	padding: 2rem;
+	text-align: center;
 }
 
 .content {
@@ -31,12 +35,54 @@
 .example {
 	margin-left: 1rem;
 	margin-bottom: 1.5rem;
+	overflow: hidden;
 }
 
 .example img {
-	width: 500px;
+	width: 300px;
+    height: 300px;
+	object-fit: cover;
+	
+	/* width: 500px;
 	padding-bottom: .5rem;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid black; */
+}
+
+/* .example img:hover {
+	transition: transform 0.5s ease;
+    transform: scale(1.1);
+} */
+
+.example.caption {
+    position: relative;
+}
+
+.example.caption .text {
+    position: absolute;     
+    top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+    opacity: 0;       
+}
+
+.example.caption .text.dark-outlines {
+	/* -webkit-text-stroke: .5px grey; */
+	text-shadow: -.5px 0 grey, 0 .5px grey, .5px 0 grey, 0 -.5px grey;
+}
+
+.example.caption .text h1 {      
+	margin: 0;      
+	color: white;
+}
+
+.example.caption:hover .text {
+	opacity: 1;
+	transition: all 0.8s ease;
+}
+
+.example.caption:hover img {
+    -webkit-filter: blur(3px);
 }
 
 .number {
